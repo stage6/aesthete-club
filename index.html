@@ -56,6 +56,12 @@
         Your browser does not support the audio element.
     </audio>
 
+    <audio id="myAudioSonica">
+        <source src="https://ssl1.viastreaming.net:7005/stream?1656241239" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+
     <div class="center">
         <h1>aesthete club</h1>
 
@@ -70,6 +76,12 @@
         <h3>Hillbilly Radio / FM 90.0</h3>
         <button onclick="playAudioMaxi()" type="button" class="button">Play</button>
         <button onclick="pauseAudioMaxi()" type="button" class="button">Stop</button>
+
+        <br></br>
+
+        <h3>Ibiza Sonica / FM 95.2</h3>
+        <button onclick="playAudioSonica()" type="button" class="button">Play</button>
+        <button onclick="pauseAudioSonica()" type="button" class="button">Stop</button>
     </div>
 
 
@@ -78,6 +90,7 @@
     <script>
         var x = document.getElementById("myAudio");
         var maxi = document.getElementById("myAudioMaxi");
+        var sonica = document.getElementById("myAudioSonica");
 
         function playAudio() {
             x.play();
@@ -93,6 +106,14 @@
 
         function pauseAudioMaxi() {
             maxi.load();
+        }
+        
+        function playAudioSonica() {
+            sonica.play();
+        }
+
+        function pauseAudioSonica() {
+            sonica.load();
         } 
     </script>
 
