@@ -7,40 +7,63 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Titillium+Web">
 
     <style>
-        body {
+        body, html {
             font-family: 'Titillium Web', sans-serif;
             background-color: rgb(255, 251, 237);
+            height: 100vh;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
         }
 
         .center {
-            text-align: center;
-            top: 20%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
         }
 
         h1 {
-            font-size: 5em;
+            font-size: 9vh; /* Adjusted font size */
+            margin-bottom: 1vh; /* Reduced margin to move title higher */
         }
 
         h2 {
-            font-size: 2em;
+            font-size: 4.5vh; /* Adjusted font size */
+            margin-bottom: 1.5vh;
         }
 
         h3 {
-            font-size: 1em;
+            font-size: 2.5vh; /* Adjusted font size */
+            margin: 1vh 0;
         }
 
         .button {
             background-color: #191919;
             border: none;
             color: white;
-            padding: 15px 32px;
             text-align: center;
             text-decoration: none;
-            display: inline-block;
-            font-size: 16px;
-            margin: 4px 2px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.8vh; /* Adjusted font size */
+            width: 30vw;
+            height: 5.5vh; /* Adjusted height */
+            padding: 0.5vw 1vw;
+            margin: 0.5vh 1vw;
             cursor: pointer;
         }
+
+        .button-group {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            margin-bottom: 1.5vh; /* Adjusted margin for space optimization */
+        }
+
     </style>
 </head>
 
@@ -61,6 +84,11 @@
         Your browser does not support the audio element.
     </audio>
 
+    <audio id="myAudioDalmacija">
+        <source src="http://shoutcast.pondi.hr:8000/;stream/1" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
 
     <div class="center">
         <h1>radios</h1>
@@ -68,29 +96,43 @@
         <h2></h2>
 
         <h3>Los Angeles Hip Hop / REAL FM 92.3</h3>
-        <button onclick="playAudio()" type="button" class="button">Play</button>
-        <button onclick="pauseAudio()" type="button" class="button">Stop</button>
+        <div class="button-group">
+            <button onclick="playAudio()" type="button" class="button">Play</button>
+            <button onclick="pauseAudio()" type="button" class="button">Stop</button>
+        </div>
 
         <br></br>
 
         <h3>Hillbilly Radio / FM 90.0</h3>
-        <button onclick="playAudioMaxi()" type="button" class="button">Play</button>
-        <button onclick="pauseAudioMaxi()" type="button" class="button">Stop</button>
+        <div class="button-group">
+            <button onclick="playAudioMaxi()" type="button" class="button">Play</button>
+            <button onclick="pauseAudioMaxi()" type="button" class="button">Stop</button>
+        </div>
 
         <br></br>
 
         <h3>Ibiza Sonica / FM 95.2</h3>
-        <button onclick="playAudioSonica()" type="button" class="button">Play</button>
-        <button onclick="pauseAudioSonica()" type="button" class="button">Stop</button>
+        <div class="button-group">
+            <button onclick="playAudioSonica()" type="button" class="button">Play</button>
+            <button onclick="pauseAudioSonica()" type="button" class="button">Stop</button>
+        </div>
+
+        <br></br>
+
+        <h3>Radio Dalmacija / FM 87.8</h3>
+        <div class="button-group">
+            <button onclick="playAudioDalmacija()" type="button" class="button">Play</button>
+            <button onclick="pauseAudioDalmacija()" type="button" class="button">Stop</button>
+        </div>
     </div>
 
 
 
 
-    <script>
-        var x = document.getElementById("myAudio");
+    <script>var x = document.getElementById("myAudio");
         var maxi = document.getElementById("myAudioMaxi");
         var sonica = document.getElementById("myAudioSonica");
+        var dalmacija = document.getElementById("myAudioDalmacija");
 
         function playAudio() {
             x.play();
@@ -107,15 +149,21 @@
         function pauseAudioMaxi() {
             maxi.load();
         }
-        
+
         function playAudioSonica() {
             sonica.play();
         }
 
         function pauseAudioSonica() {
             sonica.load();
-        } 
-    </script>
+        }
+        function playAudioDalmacija() {
+            dalmacija.play();
+        }
+
+        function pauseAudioDalmacija() {
+            dalmacija.load();
+        }</script>
 
 </body>
 
